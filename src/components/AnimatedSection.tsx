@@ -21,6 +21,7 @@ const AnimatedSection = ({
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setTimeout(() => {
+              entry.target.classList.remove('opacity-0');
               entry.target.classList.add(`animate-${animation}`);
             }, delay);
           }
@@ -41,7 +42,7 @@ const AnimatedSection = ({
   }, [animation, delay]);
 
   return (
-    <div ref={ref} className={`opacity-0 ${className}`}>
+    <div ref={ref} className={`transition-all duration-500 ${className}`}>
       {children}
     </div>
   );

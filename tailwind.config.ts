@@ -133,10 +133,10 @@ export default {
 				}
 			},
 			animation: {
-				'fade-in-up': 'fade-in-up 0.6s ease-out',
-				'fade-in-left': 'fade-in-left 0.6s ease-out',
-				'fade-in-right': 'fade-in-right 0.6s ease-out',
-				'scale-in': 'scale-in 0.5s ease-out',
+				'fade-in-up': 'fade-in-up 0.6s ease-out forwards',
+				'fade-in-left': 'fade-in-left 0.6s ease-out forwards',
+				'fade-in-right': 'fade-in-right 0.6s ease-out forwards',
+				'scale-in': 'scale-in 0.5s ease-out forwards',
 				'gradient-shift': 'gradient-shift 3s ease-in-out infinite',
 				'float': 'float 3s ease-in-out infinite',
 				'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
