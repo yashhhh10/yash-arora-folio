@@ -34,6 +34,8 @@ const FloatingNav = () => {
     { id: 'home', label: '🏠', name: 'Home' },
     { id: 'about', label: '👨‍💻', name: 'About' },
     { id: 'skills', label: '⚡', name: 'Skills' },
+    { id: 'experience', label: '💼', name: 'Experience' },
+    { id: 'education', label: '🎓', name: 'Education' },
     { id: 'projects', label: '🚀', name: 'Projects' },
     { id: 'games', label: '🎮', name: 'Games' },
     { id: 'contact', label: '📧', name: 'Contact' },

@@ -150,10 +150,24 @@ const InteractivePortfolio = () => {
               </div>
             </motion.div>
 
-            <SplitText 
-              text="Yash Raj Arora"
-              className="text-5xl md:text-7xl font-bold mb-4 bg-gradient-primary bg-clip-text text-transparent"
-            />
+            <div className="text-left max-w-4xl mx-auto">
+              <motion.p
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.5 }}
+                className="text-accent text-lg md:text-xl mb-2"
+              >
+                Hi, my name is
+              </motion.p>
+              <SplitText 
+                text="Yash Raj Arora."
+                className="text-5xl md:text-7xl font-bold mb-4 text-left"
+              />
+              <SplitText 
+                text="I build web solutions"
+                className="text-4xl md:text-6xl font-bold mb-8 text-foreground-secondary text-left"
+              />
+            </div>
 
             <TypewriterText
               text="Full-Stack Developer & Problem Solver"
@@ -162,16 +176,15 @@ const InteractivePortfolio = () => {
             />
 
             <RevealText delay={2}>
-              <p className="text-lg text-foreground-muted max-w-2xl mx-auto mb-8">
-                Passionate about building intuitive web applications and crafting efficient algorithmic solutions 
-                that solve real-world problems.
+              <p className="text-lg text-foreground-muted max-w-2xl text-left mb-8">
+                I'm a passionate developer specializing in creating intelligent, full-stack AI solutions that solve real-world problems.
               </p>
             </RevealText>
           </motion.div>
 
           <motion.div
             variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-12"
+            className="flex flex-col sm:flex-row gap-4 justify-start max-w-4xl mx-auto mb-12"
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button size="lg" className="gap-2 bg-gradient-primary hover:opacity-90 group">
@@ -189,7 +202,7 @@ const InteractivePortfolio = () => {
 
           <motion.div
             variants={itemVariants}
-            className="flex justify-center gap-6"
+            className="flex justify-start gap-6 max-w-4xl mx-auto"
           >
             {[
               { icon: Github, href: 'https://github.com/yashrajarora', color: 'hover:text-primary' },
@@ -280,31 +293,31 @@ const InteractivePortfolio = () => {
             </RevealText>
 
             <ScrollScale>
-              <Card className="p-8 bg-gradient-surface border-card-border">
-                <h3 className="text-xl font-semibold mb-6 flex items-center gap-3">
-                  <Rocket size={24} className="text-primary" />
-                  Professional Stats
-                </h3>
-                <div className="space-y-6">
-                  {[
-                    { label: 'Projects Completed', value: '10+', color: 'text-primary' },
-                    { label: 'Technologies Mastered', value: '15+', color: 'text-accent' },
-                    { label: 'Lines of Code', value: '50K+', color: 'text-primary' },
-                    { label: 'Coffee Consumed', value: '∞', color: 'text-accent' }
-                  ].map((stat, index) => (
-                    <motion.div
-                      key={stat.label}
-                      initial={{ opacity: 0, x: 50 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                      className="flex justify-between items-center"
-                    >
-                      <span className="text-foreground-secondary">{stat.label}</span>
-                      <span className={`text-2xl font-bold ${stat.color}`}>{stat.value}</span>
-                    </motion.div>
-                  ))}
-                </div>
-              </Card>
+                <Card className="p-8 bg-card border-card-border">
+                  <h3 className="text-xl font-semibold mb-6 flex items-center gap-3">
+                    <Rocket size={24} className="text-primary" />
+                    Professional Stats
+                  </h3>
+                  <div className="space-y-6">
+                    {[
+                      { label: 'Projects Completed', value: '10+', color: 'text-primary' },
+                      { label: 'Technologies Mastered', value: '15+', color: 'text-accent' },
+                      { label: 'Lines of Code', value: '50K+', color: 'text-primary' },
+                      { label: 'Coffee Consumed', value: '∞', color: 'text-accent' }
+                    ].map((stat, index) => (
+                      <motion.div
+                        key={stat.label}
+                        initial={{ opacity: 0, x: 50 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{ delay: index * 0.1 }}
+                        className="flex justify-between items-center"
+                      >
+                        <span className="text-foreground-secondary">{stat.label}</span>
+                        <span className={`text-2xl font-bold ${stat.color}`}>{stat.value}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </Card>
             </ScrollScale>
           </div>
         </div>
@@ -356,6 +369,167 @@ const InteractivePortfolio = () => {
         </div>
       </section>
 
+      {/* Experience Section */}
+      <section id="experience" className="py-32 relative">
+        <div className="container mx-auto px-6">
+          <RevealText>
+            <h2 className="text-4xl md:text-6xl font-bold text-center mb-16">
+              <span className="bg-gradient-primary bg-clip-text text-transparent">Experience</span>
+            </h2>
+          </RevealText>
+
+          <div className="max-w-4xl mx-auto">
+            <div className="relative">
+              <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-primary"></div>
+              
+              <div className="space-y-12">
+                {[
+                  {
+                    company: "Panasonic",
+                    role: "AI/ML Intern",
+                    period: "June 2025 – August 2025",
+                    description: "Developed an intelligent self-help chatbot to replace Panasonic's outdated FAQ system, boosting customer engagement. Implemented local inference using Ollama and a robust RAG pipeline.",
+                    highlights: ["Boosted customer engagement by replacing an outdated FAQ system."]
+                  },
+                  {
+                    company: "Exceldes Interiors",
+                    role: "Technology Development Intern",
+                    period: "June 2024 – August 2024", 
+                    description: "Built a full-stack AI-powered interior design website that converts real room photos into personalized design makeovers, featuring a vector-based recommendation engine.",
+                    highlights: ["Converted real room photos into personalized design makeovers with AI."]
+                  },
+                  {
+                    company: "Vedanta IAS Academy",
+                    role: "Full-Stack Developer",
+                    period: "Jan 2024 – Feb 2024",
+                    description: "Built a full-stack web app to help UPSC students analyze geopolitical topics through interactive, model-driven insights and comprehensive study materials.",
+                    highlights: ["Helped UPSC students with interactive geopolitical analysis tools."]
+                  }
+                ].map((exp, index) => (
+                  <motion.div
+                    key={exp.company}
+                    initial={{ opacity: 0, x: -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: index * 0.2 }}
+                    className="relative pl-20"
+                  >
+                    <div className="absolute left-6 w-5 h-5 bg-accent rounded-full border-4 border-background"></div>
+                    <Card className="p-6 bg-card border-card-border hover:border-primary/50 transition-all duration-300">
+                      <div className="flex items-center gap-2 mb-2">
+                        <div className="w-3 h-3 bg-accent rounded-full"></div>
+                        <h3 className="text-xl font-bold">{exp.company}</h3>
+                      </div>
+                      <div className="text-accent font-medium mb-2">{exp.role} | {exp.period}</div>
+                      <p className="text-foreground-secondary mb-4">{exp.description}</p>
+                      <ul className="space-y-1">
+                        {exp.highlights.map((highlight, idx) => (
+                          <li key={idx} className="text-foreground-muted italic">
+                            • {highlight}
+                          </li>
+                        ))}
+                      </ul>
+                    </Card>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Education Section */}
+      <section id="education" className="py-32 bg-gradient-surface/50 relative">
+        <div className="container mx-auto px-6">
+          <RevealText>
+            <h2 className="text-4xl md:text-6xl font-bold text-center mb-16">
+              Education & <span className="bg-gradient-primary bg-clip-text text-transparent">Volunteering</span>
+            </h2>
+          </RevealText>
+
+          <div className="grid lg:grid-cols-2 gap-16">
+            {/* Education */}
+            <div>
+              <h3 className="text-2xl font-bold mb-8 text-primary">Education</h3>
+              <div className="space-y-8">
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.1 }}
+                >
+                  <Card className="p-6 bg-card border-card-border">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-4 h-4 bg-accent rounded-full"></div>
+                      <h4 className="text-lg font-semibold">Thapar Institute of Engineering and Technology</h4>
+                    </div>
+                    <div className="text-accent mb-2">B.E, Computer and Electronics Engineering</div>
+                    <div className="text-foreground-muted">2022 - Present</div>
+                  </Card>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                >
+                  <Card className="p-6 bg-card border-card-border">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-4 h-4 bg-accent rounded-full"></div>
+                      <h4 className="text-lg font-semibold">Bloom Public School</h4>
+                    </div>
+                    <div className="text-foreground-muted">
+                      <div>10th Grade: 89.3%</div>
+                      <div>12th Grade: 85%</div>
+                    </div>
+                  </Card>
+                </motion.div>
+              </div>
+            </div>
+
+            {/* Volunteer Work */}
+            <div>
+              <h3 className="text-2xl font-bold mb-8 text-primary">Volunteer Work</h3>
+              <div className="space-y-8">
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                >
+                  <Card className="p-6 bg-card border-card-border">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-4 h-4 bg-accent rounded-full"></div>
+                      <h4 className="text-lg font-semibold">Toyota Road Safety Summit</h4>
+                    </div>
+                    <div className="text-accent mb-2">Speaker | Jan 2019 - Present</div>
+                    <p className="text-foreground-secondary">
+                      Addressed the summit to raise awareness about road safety, advocating for safer driving 
+                      practices and engaging with attendees to promote responsible road behavior.
+                    </p>
+                  </Card>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  <Card className="p-6 bg-card border-card-border">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-4 h-4 bg-accent rounded-full"></div>
+                      <h4 className="text-lg font-semibold">Bal Vikas Organization</h4>
+                    </div>
+                    <div className="text-accent mb-2">Volunteer Educator | March 2023</div>
+                    <p className="text-foreground-secondary">
+                      Provided personalized math tutoring to underprivileged students, fostering a 
+                      supportive learning environment and improving academic performance.
+                    </p>
+                  </Card>
+                </motion.div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Projects Section */}
       <section id="projects" className="py-32 relative">
         <div className="container mx-auto px-6">
@@ -365,100 +539,72 @@ const InteractivePortfolio = () => {
             </h2>
           </RevealText>
 
-          <div className="space-y-32">
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {projects.map((project, index) => (
               <motion.div
                 key={project.title}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.8 }}
-                className={`grid lg:grid-cols-2 gap-16 items-center ${
-                  index % 2 === 1 ? 'lg:grid-flow-col-dense' : ''
-                }`}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.2 }}
+                whileHover={{ y: -10 }}
+                className="group"
               >
-                <motion.div
-                  className={index % 2 === 1 ? 'lg:col-start-2' : ''}
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <div className="relative group overflow-hidden rounded-xl">
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-6">
-                      <div className="flex gap-4">
-                        <Button size="sm" className="gap-2">
+                <Card className="p-6 bg-card border-card-border hover:border-primary/50 transition-all duration-300 h-full">
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-xl font-bold group-hover:text-primary transition-colors">
+                        {project.title}
+                      </h3>
+                      <div className="flex gap-2">
+                        <motion.button
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          className="p-2 bg-surface hover:bg-surface-elevated rounded-full transition-colors"
+                        >
                           <Eye size={16} />
-                          Live Demo
-                        </Button>
-                        <Button variant="outline" size="sm" className="gap-2">
+                        </motion.button>
+                        <motion.button
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          className="p-2 bg-surface hover:bg-surface-elevated rounded-full transition-colors"
+                        >
                           <Github size={16} />
-                          Code
-                        </Button>
+                        </motion.button>
+                        <motion.button
+                          whileHover={{ scale: 1.1 }}
+                          whileTap={{ scale: 0.9 }}
+                          className="p-2 bg-surface hover:bg-surface-elevated rounded-full transition-colors"
+                        >
+                          <Code size={16} />
+                        </motion.button>
                       </div>
                     </div>
-                  </div>
-                </motion.div>
 
-                <RevealText delay={0.3} className={index % 2 === 1 ? 'lg:col-start-1 lg:row-start-1' : ''}>
-                  <div>
-                    <h3 className="text-3xl font-bold mb-4">{project.title}</h3>
-                    <p className="text-foreground-secondary mb-6 leading-relaxed">
+                    <p className="text-foreground-secondary">
                       {project.description}
                     </p>
 
-                    <div className="mb-6">
-                      <h4 className="font-semibold mb-3 text-primary">Key Features:</h4>
-                      <ul className="space-y-2">
+                    <div className="space-y-3">
+                      <h4 className="font-semibold text-primary text-sm">Key Features:</h4>
+                      <ul className="space-y-1">
                         {project.features.map((feature, idx) => (
-                          <motion.li
-                            key={idx}
-                            initial={{ opacity: 0, x: -20 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            transition={{ delay: idx * 0.1 }}
-                            className="flex items-start gap-3 text-foreground-secondary"
-                          >
-                            <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                          <li key={idx} className="text-sm text-foreground-secondary flex items-start gap-2">
+                            <div className="w-1.5 h-1.5 bg-primary rounded-full mt-1.5 flex-shrink-0"></div>
                             {feature}
-                          </motion.li>
+                          </li>
                         ))}
                       </ul>
                     </div>
 
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {project.technologies.map((tech, idx) => (
-                        <motion.div
-                          key={tech}
-                          initial={{ opacity: 0, scale: 0 }}
-                          whileInView={{ opacity: 1, scale: 1 }}
-                          transition={{ delay: idx * 0.05 }}
-                          whileHover={{ scale: 1.1 }}
-                        >
-                          <Badge variant="outline" className="border-primary/20 text-primary">
-                            {tech}
-                          </Badge>
-                        </motion.div>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech) => (
+                        <Badge key={tech} variant="outline" className="border-primary/20 text-primary text-xs">
+                          {tech}
+                        </Badge>
                       ))}
                     </div>
-
-                    <div className="flex gap-4">
-                      <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                        <Button className="gap-2">
-                          <Eye size={18} />
-                          View Project
-                        </Button>
-                      </motion.div>
-                      <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                        <Button variant="outline" className="gap-2">
-                          <Github size={18} />
-                          Source Code
-                        </Button>
-                      </motion.div>
-                    </div>
                   </div>
-                </RevealText>
+                </Card>
               </motion.div>
             ))}
           </div>
