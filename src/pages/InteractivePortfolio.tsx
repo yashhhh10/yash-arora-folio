@@ -1,3 +1,4 @@
+
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
@@ -66,7 +67,6 @@ const InteractivePortfolio = () => {
       title: 'Corporate Intranet Portal',
       description: 'A comprehensive MERN stack platform with JWT authentication and role-based access control.',
       technologies: ['React', 'Node.js', 'MongoDB', 'JWT', 'bcrypt'],
-      image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80',
       features: [
         'Real-time company updates and notifications',
         'Secure JWT-based authentication',
@@ -78,12 +78,22 @@ const InteractivePortfolio = () => {
       title: 'Expenseless Finance Platform',
       description: 'Personal finance management software with real-time bank synchronization and expense tracking.',
       technologies: ['React', 'MongoDB', 'Chart.js', 'UI/UX'],
-      image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80',
       features: [
         'Real-time bank account synchronization',
         'Interactive expense tracking and budgeting',
         'Data visualization with charts',
         'Debt management and planning tools'
+      ]
+    },
+    {
+      title: 'HospEASE (AI-Powered Hospital ChatBot)',
+      description: 'Multilingual AI chatbot using NLP (RAG) to automate patient inquiries and reduce staff workload.',
+      technologies: ['RAG', 'NLP', 'PyTorch', 'LAMA AI', 'ChromaDB', 'Flask'],
+      features: [
+        'Multilingual support (English and Hindi)',
+        'Automated OPD/OT scheduling and FAQs',
+        'Real-time navigation via Google Maps API',
+        'Intuitive UI design for patient guidance'
       ]
     }
   ];
@@ -128,12 +138,12 @@ const InteractivePortfolio = () => {
       <FloatingNav />
 
       {/* Hero Section */}
-      <section id="home" className="min-h-screen flex items-center justify-center relative">
+      <section id="home" className="min-h-screen flex items-center relative">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="container mx-auto px-6 text-center relative z-10"
+          className="container mx-auto px-6 relative z-10"
         >
           <motion.div
             variants={itemVariants}
@@ -143,14 +153,14 @@ const InteractivePortfolio = () => {
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ type: "spring", stiffness: 260, damping: 20, delay: 0.5 }}
-              className="w-32 h-32 mx-auto mb-8 rounded-full bg-gradient-primary p-1"
+              className="w-32 h-32 mb-8 rounded-full bg-gradient-primary p-1"
             >
               <div className="w-full h-full rounded-full bg-background flex items-center justify-center">
                 <Code size={48} className="text-primary" />
               </div>
             </motion.div>
 
-            <div className="text-left max-w-4xl mx-auto">
+            <div className="text-left max-w-6xl">
               <motion.p
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -176,7 +186,7 @@ const InteractivePortfolio = () => {
             />
 
             <RevealText delay={2}>
-              <p className="text-lg text-foreground-muted max-w-2xl text-left mb-8">
+              <p className="text-lg text-foreground-muted max-w-3xl text-left mb-8">
                 I'm a passionate developer specializing in creating intelligent, full-stack AI solutions that solve real-world problems.
               </p>
             </RevealText>
@@ -184,7 +194,7 @@ const InteractivePortfolio = () => {
 
           <motion.div
             variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-4 justify-start max-w-4xl mx-auto mb-12"
+            className="flex flex-col sm:flex-row gap-4 justify-start max-w-6xl mb-12"
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button size="lg" className="gap-2 bg-gradient-primary hover:opacity-90 group">
@@ -202,7 +212,7 @@ const InteractivePortfolio = () => {
 
           <motion.div
             variants={itemVariants}
-            className="flex justify-start gap-6 max-w-4xl mx-auto"
+            className="flex justify-start gap-6 max-w-6xl"
           >
             {[
               { icon: Github, href: 'https://github.com/yashrajarora', color: 'hover:text-primary' },
@@ -215,7 +225,7 @@ const InteractivePortfolio = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={`p-4 bg-surface hover:bg-surface-elevated rounded-full transition-all duration-300 ${color} group`}
-                whileHover={{ scale: 1.1, rotate: 360 }}
+                whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -293,31 +303,31 @@ const InteractivePortfolio = () => {
             </RevealText>
 
             <ScrollScale>
-                <Card className="p-8 bg-card border-card-border">
-                  <h3 className="text-xl font-semibold mb-6 flex items-center gap-3">
-                    <Rocket size={24} className="text-primary" />
-                    Professional Stats
-                  </h3>
-                  <div className="space-y-6">
-                    {[
-                      { label: 'Projects Completed', value: '10+', color: 'text-primary' },
-                      { label: 'Technologies Mastered', value: '15+', color: 'text-accent' },
-                      { label: 'Lines of Code', value: '50K+', color: 'text-primary' },
-                      { label: 'Coffee Consumed', value: '∞', color: 'text-accent' }
-                    ].map((stat, index) => (
-                      <motion.div
-                        key={stat.label}
-                        initial={{ opacity: 0, x: 50 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ delay: index * 0.1 }}
-                        className="flex justify-between items-center"
-                      >
-                        <span className="text-foreground-secondary">{stat.label}</span>
-                        <span className={`text-2xl font-bold ${stat.color}`}>{stat.value}</span>
-                      </motion.div>
-                    ))}
-                  </div>
-                </Card>
+              <Card className="p-8 bg-card border-card-border">
+                <h3 className="text-xl font-semibold mb-6 flex items-center gap-3">
+                  <Rocket size={24} className="text-primary" />
+                  Professional Stats
+                </h3>
+                <div className="space-y-6">
+                  {[
+                    { label: 'Projects Completed', value: '15+', color: 'text-primary' },
+                    { label: 'Technologies Mastered', value: '20+', color: 'text-accent' },
+                    { label: 'Lines of Code', value: '50K+', color: 'text-primary' },
+                    { label: 'Coffee Consumed', value: '∞', color: 'text-accent' }
+                  ].map((stat, index) => (
+                    <motion.div
+                      key={stat.label}
+                      initial={{ opacity: 0, x: 50 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                      className="flex justify-between items-center"
+                    >
+                      <span className="text-foreground-secondary">{stat.label}</span>
+                      <span className={`text-2xl font-bold ${stat.color}`}>{stat.value}</span>
+                    </motion.div>
+                  ))}
+                </div>
+              </Card>
             </ScrollScale>
           </div>
         </div>
@@ -383,54 +393,36 @@ const InteractivePortfolio = () => {
               <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-primary"></div>
               
               <div className="space-y-12">
-                {[
-                  {
-                    company: "Panasonic",
-                    role: "AI/ML Intern",
-                    period: "June 2025 – August 2025",
-                    description: "Developed an intelligent self-help chatbot to replace Panasonic's outdated FAQ system, boosting customer engagement. Implemented local inference using Ollama and a robust RAG pipeline.",
-                    highlights: ["Boosted customer engagement by replacing an outdated FAQ system."]
-                  },
-                  {
-                    company: "Exceldes Interiors",
-                    role: "Technology Development Intern",
-                    period: "June 2024 – August 2024", 
-                    description: "Built a full-stack AI-powered interior design website that converts real room photos into personalized design makeovers, featuring a vector-based recommendation engine.",
-                    highlights: ["Converted real room photos into personalized design makeovers with AI."]
-                  },
-                  {
-                    company: "Vedanta IAS Academy",
-                    role: "Full-Stack Developer",
-                    period: "Jan 2024 – Feb 2024",
-                    description: "Built a full-stack web app to help UPSC students analyze geopolitical topics through interactive, model-driven insights and comprehensive study materials.",
-                    highlights: ["Helped UPSC students with interactive geopolitical analysis tools."]
-                  }
-                ].map((exp, index) => (
-                  <motion.div
-                    key={exp.company}
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.2 }}
-                    className="relative pl-20"
-                  >
-                    <div className="absolute left-6 w-5 h-5 bg-accent rounded-full border-4 border-background"></div>
-                    <Card className="p-6 bg-card border-card-border hover:border-primary/50 transition-all duration-300">
-                      <div className="flex items-center gap-2 mb-2">
-                        <div className="w-3 h-3 bg-accent rounded-full"></div>
-                        <h3 className="text-xl font-bold">{exp.company}</h3>
-                      </div>
-                      <div className="text-accent font-medium mb-2">{exp.role} | {exp.period}</div>
-                      <p className="text-foreground-secondary mb-4">{exp.description}</p>
-                      <ul className="space-y-1">
-                        {exp.highlights.map((highlight, idx) => (
-                          <li key={idx} className="text-foreground-muted italic">
-                            • {highlight}
-                          </li>
-                        ))}
-                      </ul>
-                    </Card>
-                  </motion.div>
-                ))}
+                <motion.div
+                  initial={{ opacity: 0, x: -50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.1 }}
+                  className="relative pl-20"
+                >
+                  <div className="absolute left-6 w-5 h-5 bg-accent rounded-full border-4 border-background"></div>
+                  <Card className="p-6 bg-card border-card-border hover:border-primary/50 transition-all duration-300">
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className="w-3 h-3 bg-accent rounded-full"></div>
+                      <h3 className="text-xl font-bold">Tecnics Integration Technologies</h3>
+                    </div>
+                    <div className="text-accent font-medium mb-2">Full-Stack Developer Intern | June 2025 – Aug 2025</div>
+                    <div className="text-foreground-muted text-sm mb-4">Hyderabad, India</div>
+                    <ul className="space-y-2 text-foreground-secondary">
+                      <li className="flex items-start gap-2">
+                        <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                        Designed and launched a secure intranet portal used by 500+ employees, enhancing internal workflows and reducing manual communication by 40%
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                        Developed 20+ modular RESTful APIs with 100% API validation using Postman, and integrated with a responsive frontend
+                      </li>
+                      <li className="flex items-start gap-2">
+                        <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                        Deployed and maintained the platform on live servers, achieving 99.9% uptime and supporting uninterrupted access for all departments
+                      </li>
+                    </ul>
+                  </Card>
+                </motion.div>
               </div>
             </div>
           </div>
@@ -442,89 +434,43 @@ const InteractivePortfolio = () => {
         <div className="container mx-auto px-6">
           <RevealText>
             <h2 className="text-4xl md:text-6xl font-bold text-center mb-16">
-              Education & <span className="bg-gradient-primary bg-clip-text text-transparent">Volunteering</span>
+              <span className="bg-gradient-primary bg-clip-text text-transparent">Education</span>
             </h2>
           </RevealText>
 
-          <div className="grid lg:grid-cols-2 gap-16">
-            {/* Education */}
-            <div>
-              <h3 className="text-2xl font-bold mb-8 text-primary">Education</h3>
-              <div className="space-y-8">
-                <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 }}
-                >
-                  <Card className="p-6 bg-card border-card-border">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-4 h-4 bg-accent rounded-full"></div>
-                      <h4 className="text-lg font-semibold">Thapar Institute of Engineering and Technology</h4>
-                    </div>
-                    <div className="text-accent mb-2">B.E, Computer and Electronics Engineering</div>
-                    <div className="text-foreground-muted">2022 - Present</div>
-                  </Card>
-                </motion.div>
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-8">
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+              >
+                <Card className="p-6 bg-card border-card-border">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-4 h-4 bg-accent rounded-full"></div>
+                    <h4 className="text-lg font-semibold">Thapar Institute of Engineering and Technology</h4>
+                  </div>
+                  <div className="text-accent mb-2">B.E, Computer Science Engineering</div>
+                  <div className="text-foreground-muted">2022 - Present</div>
+                </Card>
+              </motion.div>
 
-                <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 }}
-                >
-                  <Card className="p-6 bg-card border-card-border">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-4 h-4 bg-accent rounded-full"></div>
-                      <h4 className="text-lg font-semibold">Bloom Public School</h4>
-                    </div>
-                    <div className="text-foreground-muted">
-                      <div>10th Grade: 89.3%</div>
-                      <div>12th Grade: 85%</div>
-                    </div>
-                  </Card>
-                </motion.div>
-              </div>
-            </div>
-
-            {/* Volunteer Work */}
-            <div>
-              <h3 className="text-2xl font-bold mb-8 text-primary">Volunteer Work</h3>
-              <div className="space-y-8">
-                <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 }}
-                >
-                  <Card className="p-6 bg-card border-card-border">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-4 h-4 bg-accent rounded-full"></div>
-                      <h4 className="text-lg font-semibold">Toyota Road Safety Summit</h4>
-                    </div>
-                    <div className="text-accent mb-2">Speaker | Jan 2019 - Present</div>
-                    <p className="text-foreground-secondary">
-                      Addressed the summit to raise awareness about road safety, advocating for safer driving 
-                      practices and engaging with attendees to promote responsible road behavior.
-                    </p>
-                  </Card>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 }}
-                >
-                  <Card className="p-6 bg-card border-card-border">
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-4 h-4 bg-accent rounded-full"></div>
-                      <h4 className="text-lg font-semibold">Bal Vikas Organization</h4>
-                    </div>
-                    <div className="text-accent mb-2">Volunteer Educator | March 2023</div>
-                    <p className="text-foreground-secondary">
-                      Provided personalized math tutoring to underprivileged students, fostering a 
-                      supportive learning environment and improving academic performance.
-                    </p>
-                  </Card>
-                </motion.div>
-              </div>
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+              >
+                <Card className="p-6 bg-card border-card-border">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-4 h-4 bg-accent rounded-full"></div>
+                    <h4 className="text-lg font-semibold">SNEH International School</h4>
+                  </div>
+                  <div className="text-foreground-muted">
+                    <div>10th Grade: 92.7%</div>
+                    <div>12th Grade: 82.5%</div>
+                  </div>
+                </Card>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -539,7 +485,7 @@ const InteractivePortfolio = () => {
             </h2>
           </RevealText>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {projects.map((project, index) => (
               <motion.div
                 key={project.title}
@@ -560,6 +506,7 @@ const InteractivePortfolio = () => {
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
                           className="p-2 bg-surface hover:bg-surface-elevated rounded-full transition-colors"
+                          title="Live Demo"
                         >
                           <Eye size={16} />
                         </motion.button>
@@ -567,6 +514,7 @@ const InteractivePortfolio = () => {
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
                           className="p-2 bg-surface hover:bg-surface-elevated rounded-full transition-colors"
+                          title="GitHub Repository"
                         >
                           <Github size={16} />
                         </motion.button>
@@ -574,6 +522,7 @@ const InteractivePortfolio = () => {
                           whileHover={{ scale: 1.1 }}
                           whileTap={{ scale: 0.9 }}
                           className="p-2 bg-surface hover:bg-surface-elevated rounded-full transition-colors"
+                          title="View Code"
                         >
                           <Code size={16} />
                         </motion.button>
