@@ -161,22 +161,35 @@ const InteractivePortfolio = () => {
             </motion.div>
 
             <div className="text-left max-w-6xl">
-              <motion.p
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.5 }}
-                className="text-accent text-lg md:text-xl mb-2"
-              >
-                Hi, my name is
-              </motion.p>
               <SplitText 
                 text="Yash Raj Arora."
                 className="text-5xl md:text-7xl font-bold mb-4 text-left"
               />
-              <SplitText 
-                text="I build web solutions"
-                className="text-4xl md:text-6xl font-bold mb-8 text-foreground-secondary text-left"
-              />
+              
+              {/* Quick Stats */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.2 }}
+                className="flex flex-wrap gap-6 mb-8"
+              >
+                {[
+                  { label: '20+ Technologies', icon: Code },
+                  { label: '50K+ Lines of Code', icon: Zap },
+                  { label: '∞ Coffee Consumed', icon: Rocket }
+                ].map(({ label, icon: Icon }, index) => (
+                  <motion.div
+                    key={label}
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 1.4 + index * 0.1, type: "spring" }}
+                    className="flex items-center gap-2 px-4 py-2 bg-surface/80 rounded-full border border-border/50"
+                  >
+                    <Icon size={16} className="text-primary" />
+                    <span className="text-sm font-medium text-foreground-secondary">{label}</span>
+                  </motion.div>
+                ))}
+              </motion.div>
             </div>
 
             <TypewriterText
@@ -197,7 +210,11 @@ const InteractivePortfolio = () => {
             className="flex flex-col sm:flex-row gap-4 justify-start max-w-6xl mb-12"
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Button size="lg" className="gap-2 bg-gradient-primary hover:opacity-90 group">
+              <Button 
+                size="lg" 
+                className="gap-2 bg-gradient-primary hover:opacity-90 group"
+                onClick={() => window.open('https://drive.google.com/file/d/1-GlS9wCQUJg3QWVXP7l2BUQT62-UJt_W/view?usp=drive_link', '_blank')}
+              >
                 <Download size={20} className="group-hover:animate-bounce" />
                 Download Resume
               </Button>
@@ -306,14 +323,14 @@ const InteractivePortfolio = () => {
               <Card className="p-8 bg-card border-card-border">
                 <h3 className="text-xl font-semibold mb-6 flex items-center gap-3">
                   <Rocket size={24} className="text-primary" />
-                  Professional Stats
+                  Quick Facts
                 </h3>
                 <div className="space-y-6">
                   {[
                     { label: 'Projects Completed', value: '15+', color: 'text-primary' },
-                    { label: 'Technologies Mastered', value: '20+', color: 'text-accent' },
-                    { label: 'Lines of Code', value: '50K+', color: 'text-primary' },
-                    { label: 'Coffee Consumed', value: '∞', color: 'text-accent' }
+                    { label: 'Current Focus', value: 'AI & Web Dev', color: 'text-accent' },
+                    { label: 'Experience', value: '2+ Years', color: 'text-primary' },
+                    { label: 'Location', value: 'India', color: 'text-accent' }
                   ].map((stat, index) => (
                     <motion.div
                       key={stat.label}
@@ -323,7 +340,7 @@ const InteractivePortfolio = () => {
                       className="flex justify-between items-center"
                     >
                       <span className="text-foreground-secondary">{stat.label}</span>
-                      <span className={`text-2xl font-bold ${stat.color}`}>{stat.value}</span>
+                      <span className={`text-xl font-bold ${stat.color}`}>{stat.value}</span>
                     </motion.div>
                   ))}
                 </div>
