@@ -232,7 +232,7 @@ const InteractivePortfolio = () => {
             className="flex justify-start gap-6 max-w-6xl"
           >
             {[
-              { icon: Github, href: 'https://github.com/yashrajarora', color: 'hover:text-primary' },
+              { icon: Github, href: 'https://github.com/yashhhh10', color: 'hover:text-primary' },
               { icon: Linkedin, href: 'https://www.linkedin.com/in/yashrajarora04070500/', color: 'hover:text-accent' },
               { icon: Mail, href: 'mailto:yashrajarora79@gmail.com', color: 'hover:text-primary' }
             ].map(({ icon: Icon, href, color }, index) => (
