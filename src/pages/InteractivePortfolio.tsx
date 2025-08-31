@@ -270,11 +270,11 @@ const InteractivePortfolio = () => {
             About <span className="bg-gradient-primary bg-clip-text text-transparent">Me</span>
           </h2>
 
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <RevealText delay={0.3}>
+          <div className="grid lg:grid-cols-1 gap-16 items-center justify-center max-w-4xl mx-auto">
+            <div className="space-y-6 text-left lg:text-center">
               <div className="space-y-6">
                 <motion.div
-                  className="flex items-center gap-4 mb-8"
+                  className="flex items-center gap-4 mb-8 justify-start lg:justify-center"
                   whileInView={{ opacity: 1, x: 0 }}
                   initial={{ opacity: 0, x: -50 }}
                 >
@@ -297,7 +297,7 @@ const InteractivePortfolio = () => {
                   personal finance tools. I believe in writing clean, maintainable code that follows industry best practices.
                 </p>
 
-                <div className="flex flex-wrap gap-3 mt-8">
+                <div className="flex flex-wrap gap-3 mt-8 justify-start lg:justify-center">
                   {['React', 'Node.js', 'TypeScript', 'MongoDB', 'AWS', 'Git'].map((tech, index) => (
                     <motion.div
                       key={tech}
@@ -313,8 +313,7 @@ const InteractivePortfolio = () => {
                   ))}
                 </div>
               </div>
-            </RevealText>
-
+            </div>
           </div>
         </div>
       </section>
