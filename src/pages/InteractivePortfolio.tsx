@@ -162,7 +162,7 @@ const InteractivePortfolio = () => {
 
             <div className="text-left max-w-6xl">
               <SplitText 
-                text="Yash Raj Arora."
+                text="Yash Raj Arora"
                 className="text-5xl md:text-7xl font-bold mb-4 text-left"
               />
               
@@ -266,13 +266,9 @@ const InteractivePortfolio = () => {
       {/* About Section */}
       <section id="about" className="py-32 relative">
         <div className="container mx-auto px-6">
-          <ParallaxText speed={0.3}>
-            <RevealText>
-              <h2 className="text-4xl md:text-6xl font-bold text-center mb-16">
-                About <span className="bg-gradient-primary bg-clip-text text-transparent">Me</span>
-              </h2>
-            </RevealText>
-          </ParallaxText>
+          <h2 className="text-4xl md:text-6xl font-bold text-center mb-16">
+            About <span className="bg-gradient-primary bg-clip-text text-transparent">Me</span>
+          </h2>
 
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <RevealText delay={0.3}>
@@ -319,33 +315,6 @@ const InteractivePortfolio = () => {
               </div>
             </RevealText>
 
-            <ScrollScale>
-              <Card className="p-8 bg-card border-card-border">
-                <h3 className="text-xl font-semibold mb-6 flex items-center gap-3">
-                  <Rocket size={24} className="text-primary" />
-                  Quick Facts
-                </h3>
-                <div className="space-y-6">
-                  {[
-                    { label: 'Projects Completed', value: '15+', color: 'text-primary' },
-                    { label: 'Current Focus', value: 'AI & Web Dev', color: 'text-accent' },
-                    { label: 'Experience', value: '2+ Years', color: 'text-primary' },
-                    { label: 'Location', value: 'India', color: 'text-accent' }
-                  ].map((stat, index) => (
-                    <motion.div
-                      key={stat.label}
-                      initial={{ opacity: 0, x: 50 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                      className="flex justify-between items-center"
-                    >
-                      <span className="text-foreground-secondary">{stat.label}</span>
-                      <span className={`text-xl font-bold ${stat.color}`}>{stat.value}</span>
-                    </motion.div>
-                  ))}
-                </div>
-              </Card>
-            </ScrollScale>
           </div>
         </div>
       </section>
@@ -353,11 +322,9 @@ const InteractivePortfolio = () => {
       {/* Skills Section */}
       <section id="skills" className="py-32 bg-gradient-surface/50 relative">
         <div className="container mx-auto px-6">
-          <RevealText>
-            <h2 className="text-4xl md:text-6xl font-bold text-center mb-16">
-              Skills & <span className="bg-gradient-primary bg-clip-text text-transparent">Expertise</span>
-            </h2>
-          </RevealText>
+          <h2 className="text-4xl md:text-6xl font-bold text-center mb-16">
+            Skills & <span className="bg-gradient-primary bg-clip-text text-transparent">Expertise</span>
+          </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {Object.entries(skills).map(([category, skillList], categoryIndex) => (
@@ -399,11 +366,9 @@ const InteractivePortfolio = () => {
       {/* Experience Section */}
       <section id="experience" className="py-32 relative">
         <div className="container mx-auto px-6">
-          <RevealText>
-            <h2 className="text-4xl md:text-6xl font-bold text-center mb-16">
-              <span className="bg-gradient-primary bg-clip-text text-transparent">Experience</span>
-            </h2>
-          </RevealText>
+          <h2 className="text-4xl md:text-6xl font-bold text-center mb-16">
+            <span className="bg-gradient-primary bg-clip-text text-transparent">Experience</span>
+          </h2>
 
           <div className="max-w-4xl mx-auto">
             <div className="relative">
@@ -449,11 +414,9 @@ const InteractivePortfolio = () => {
       {/* Education Section */}
       <section id="education" className="py-32 bg-gradient-surface/50 relative">
         <div className="container mx-auto px-6">
-          <RevealText>
-            <h2 className="text-4xl md:text-6xl font-bold text-center mb-16">
-              <span className="bg-gradient-primary bg-clip-text text-transparent">Education</span>
-            </h2>
-          </RevealText>
+          <h2 className="text-4xl md:text-6xl font-bold text-center mb-16">
+            <span className="bg-gradient-primary bg-clip-text text-transparent">Education</span>
+          </h2>
 
           <div className="max-w-4xl mx-auto">
             <div className="space-y-8">
@@ -496,11 +459,9 @@ const InteractivePortfolio = () => {
       {/* Projects Section */}
       <section id="projects" className="py-32 relative">
         <div className="container mx-auto px-6">
-          <RevealText>
-            <h2 className="text-4xl md:text-6xl font-bold text-center mb-16">
-              Featured <span className="bg-gradient-primary bg-clip-text text-transparent">Projects</span>
-            </h2>
-          </RevealText>
+          <h2 className="text-4xl md:text-6xl font-bold text-center mb-16">
+            Featured <span className="bg-gradient-primary bg-clip-text text-transparent">Projects</span>
+          </h2>
 
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {projects.map((project, index) => (
@@ -524,6 +485,11 @@ const InteractivePortfolio = () => {
                           whileTap={{ scale: 0.9 }}
                           className="p-2 bg-surface hover:bg-surface-elevated rounded-full transition-colors"
                           title="Live Demo"
+                          onClick={() => {
+                            if (project.title === 'Expenseless Finance Platform') {
+                              window.open('https://expenseless-frontend.onrender.com/', '_blank');
+                            }
+                          }}
                         >
                           <Eye size={16} />
                         </motion.button>
@@ -532,6 +498,13 @@ const InteractivePortfolio = () => {
                           whileTap={{ scale: 0.9 }}
                           className="p-2 bg-surface hover:bg-surface-elevated rounded-full transition-colors"
                           title="GitHub Repository"
+                          onClick={() => {
+                            if (project.title === 'Corporate Intranet Portal') {
+                              window.open('https://github.com/yashhhh10/technics-portal', '_blank');
+                            } else if (project.title === 'Expenseless Finance Platform') {
+                              window.open('https://github.com/yashhhh10/Expenseless', '_blank');
+                            }
+                          }}
                         >
                           <Github size={16} />
                         </motion.button>
@@ -587,11 +560,9 @@ const InteractivePortfolio = () => {
       {/* Contact Section */}
       <section id="contact" className="py-32 relative">
         <div className="container mx-auto px-6">
-          <RevealText>
-            <h2 className="text-4xl md:text-6xl font-bold text-center mb-16">
-              Let's <span className="bg-gradient-primary bg-clip-text text-transparent">Connect</span>
-            </h2>
-          </RevealText>
+          <h2 className="text-4xl md:text-6xl font-bold text-center mb-16">
+            Let's <span className="bg-gradient-primary bg-clip-text text-transparent">Connect</span>
+          </h2>
 
           <div className="grid lg:grid-cols-2 gap-16">
             <RevealText delay={0.3}>
