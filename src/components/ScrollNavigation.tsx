@@ -73,15 +73,15 @@ const FloatingNav = () => {
     <motion.nav
       initial={{ y: 100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      className="fixed bottom-8 left-1/2 transform -translate-x-1/2 z-50"
+      className="fixed bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 z-50 px-4 w-full max-w-fit"
     >
-      <div className="flex items-center gap-2 bg-surface/80 backdrop-blur-lg rounded-full p-3 border border-border shadow-xl">
+      <div className="flex items-center gap-1 md:gap-2 bg-surface/80 backdrop-blur-lg rounded-full p-2 md:p-3 border border-border shadow-xl mx-auto">
         {sections.map((section) => (
           <Button
             key={section.id}
             variant="ghost"
             size="sm"
-            className={`relative rounded-full transition-all duration-300 ${
+            className={`relative rounded-full transition-all duration-300 w-8 h-8 md:w-10 md:h-10 p-0 ${
               activeSection === section.id
                 ? 'bg-primary text-primary-foreground shadow-primary'
                 : 'hover:bg-surface-elevated'
@@ -89,7 +89,7 @@ const FloatingNav = () => {
             onClick={() => scrollToSection(section.id)}
             title={section.name}
           >
-            <span className="text-lg">{section.label}</span>
+            <span className="text-sm md:text-lg">{section.label}</span>
             {activeSection === section.id && (
               <motion.div
                 className="absolute inset-0 bg-primary rounded-full -z-10"
