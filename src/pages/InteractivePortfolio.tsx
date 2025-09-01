@@ -266,7 +266,7 @@ const InteractivePortfolio = () => {
       {/* About Section */}
       <section id="about" className="py-32 relative">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl md:text-6xl font-bold text-center mb-16">
+          <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 text-foreground">
             About <span className="bg-gradient-primary bg-clip-text text-transparent">Me</span>
           </h2>
 
@@ -282,7 +282,7 @@ const InteractivePortfolio = () => {
                     <Zap size={24} className="text-primary-foreground" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold">Full-Stack Developer</h3>
+                    <h3 className="text-2xl font-bold text-foreground">Full-Stack Developer</h3>
                     <p className="text-foreground-secondary">MERN Stack Specialist</p>
                   </div>
                 </motion.div>
@@ -321,7 +321,7 @@ const InteractivePortfolio = () => {
       {/* Skills Section */}
       <section id="skills" className="py-32 bg-gradient-surface/50 relative">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl md:text-6xl font-bold text-center mb-16">
+          <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 text-foreground">
             Skills & <span className="bg-gradient-primary bg-clip-text text-transparent">Expertise</span>
           </h2>
 
@@ -365,7 +365,7 @@ const InteractivePortfolio = () => {
       {/* Experience Section */}
       <section id="experience" className="py-32 relative">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl md:text-6xl font-bold text-center mb-16">
+          <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 text-foreground">
             <span className="bg-gradient-primary bg-clip-text text-transparent">Experience</span>
           </h2>
 
@@ -384,7 +384,7 @@ const InteractivePortfolio = () => {
                   <Card className="p-6 bg-card border-card-border hover:border-primary/50 transition-all duration-300">
                     <div className="flex items-center gap-2 mb-2">
                       <div className="w-3 h-3 bg-accent rounded-full"></div>
-                      <h3 className="text-xl font-bold">Tecnics Integration Technologies</h3>
+                      <h3 className="text-xl font-bold text-foreground">Tecnics Integration Technologies</h3>
                     </div>
                     <div className="text-accent font-medium mb-2">Full-Stack Developer Intern | June 2025 – Aug 2025</div>
                     <div className="text-foreground-muted text-sm mb-4">Hyderabad, India</div>
@@ -413,7 +413,7 @@ const InteractivePortfolio = () => {
       {/* Education Section */}
       <section id="education" className="py-32 bg-gradient-surface/50 relative">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl md:text-6xl font-bold text-center mb-16">
+          <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 text-foreground">
             <span className="bg-gradient-primary bg-clip-text text-transparent">Education</span>
           </h2>
 
@@ -458,7 +458,7 @@ const InteractivePortfolio = () => {
       {/* Projects Section */}
       <section id="projects" className="py-32 relative">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl md:text-6xl font-bold text-center mb-16">
+          <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 text-foreground">
             Featured <span className="bg-gradient-primary bg-clip-text text-transparent">Projects</span>
           </h2>
 
@@ -559,14 +559,14 @@ const InteractivePortfolio = () => {
       {/* Contact Section */}
       <section id="contact" className="py-32 relative">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl md:text-6xl font-bold text-center mb-16">
+          <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 text-foreground">
             Let's <span className="bg-gradient-primary bg-clip-text text-transparent">Connect</span>
           </h2>
 
           <div className="grid lg:grid-cols-2 gap-16">
             <RevealText delay={0.3}>
               <Card className="p-8 bg-card border-card-border">
-                <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
+                <h3 className="text-2xl font-bold mb-6 text-foreground">Send a Message</h3>
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <Input
@@ -609,7 +609,7 @@ const InteractivePortfolio = () => {
             <RevealText delay={0.6}>
               <div className="space-y-8">
                 <div>
-                  <h3 className="text-2xl font-bold mb-6">Get in Touch</h3>
+                  <h3 className="text-2xl font-bold mb-6 text-foreground">Get in Touch</h3>
                   <p className="text-foreground-secondary mb-8 leading-relaxed">
                     Ready to bring your ideas to life? I'm always excited to work on challenging projects 
                     and collaborate with innovative teams.
