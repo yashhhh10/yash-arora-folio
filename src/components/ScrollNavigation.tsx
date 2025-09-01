@@ -73,9 +73,11 @@ const FloatingNav = () => {
     <motion.nav
       initial={{ y: 100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      className="fixed bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 z-50 px-4 w-full max-w-fit"
+      className="fixed bottom-4 md:bottom-8 left-0 right-0 z-50 flex justify-center px-4"
     >
-      <div className="flex items-center gap-1 md:gap-2 bg-surface/80 backdrop-blur-lg rounded-full p-2 md:p-3 border border-border shadow-xl mx-auto">
+      <div className="flex items-center gap-1 md:gap-2 bg-surface/80 backdrop-blur-lg rounded-full p-2 md:p-3 border border-border shadow-xl"
+        style={{ maxWidth: 'calc(100vw - 2rem)' }}
+      >
         {sections.map((section) => (
           <Button
             key={section.id}
