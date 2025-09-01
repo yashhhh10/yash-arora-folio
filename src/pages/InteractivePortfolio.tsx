@@ -267,7 +267,7 @@ const InteractivePortfolio = () => {
       <section id="about" className="py-32 relative">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 text-foreground">
-            About <span className="text-accent">Me</span>
+            About <span className="bg-gradient-primary bg-clip-text text-transparent">Me</span>
           </h2>
 
           <div className="grid lg:grid-cols-1 gap-16 items-center justify-center max-w-4xl mx-auto">
@@ -322,7 +322,7 @@ const InteractivePortfolio = () => {
       <section id="skills" className="py-32 bg-gradient-surface/50 relative">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 text-foreground">
-            Skills & <span className="text-primary">Expertise</span>
+            Skills & <span className="bg-gradient-primary bg-clip-text text-transparent">Expertise</span>
           </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -366,7 +366,7 @@ const InteractivePortfolio = () => {
       <section id="experience" className="py-32 relative">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 text-foreground">
-            <span className="text-accent">Experience</span>
+            <span className="bg-gradient-primary bg-clip-text text-transparent">Experience</span>
           </h2>
 
           <div className="max-w-4xl mx-auto">
@@ -414,7 +414,7 @@ const InteractivePortfolio = () => {
       <section id="education" className="py-32 bg-gradient-surface/50 relative">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 text-foreground">
-            <span className="text-primary">Education</span>
+            <span className="bg-gradient-primary bg-clip-text text-transparent">Education</span>
           </h2>
 
           <div className="max-w-4xl mx-auto">
@@ -459,7 +459,7 @@ const InteractivePortfolio = () => {
       <section id="projects" className="py-32 relative">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 text-foreground">
-            Featured <span className="text-accent">Projects</span>
+            Featured <span className="bg-gradient-primary bg-clip-text text-transparent">Projects</span>
           </h2>
 
           <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto">
@@ -560,7 +560,7 @@ const InteractivePortfolio = () => {
       <section id="contact" className="py-32 relative">
         <div className="container mx-auto px-6">
           <h2 className="text-4xl md:text-6xl font-bold text-center mb-16 text-foreground">
-            Let's <span className="text-primary">Connect</span>
+            Let's <span className="bg-gradient-primary bg-clip-text text-transparent">Connect</span>
           </h2>
 
           <div className="grid lg:grid-cols-2 gap-16">
