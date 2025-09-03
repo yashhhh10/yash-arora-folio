@@ -563,50 +563,8 @@ const InteractivePortfolio = () => {
             Let's <span className="bg-gradient-primary bg-clip-text text-transparent">Connect</span>
           </h2>
 
-          <div className="grid lg:grid-cols-2 gap-16">
+          <div className="max-w-4xl mx-auto">
             <RevealText delay={0.3}>
-              <Card className="p-8 bg-card border-card-border">
-                <h3 className="text-2xl font-bold mb-6 text-foreground">Send a Message</h3>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <Input
-                      placeholder="Your Name"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="bg-input border-input-border"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <Input
-                      type="email"
-                      placeholder="your.email@example.com"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      className="bg-input border-input-border"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <Textarea
-                      placeholder="Tell me about your project..."
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="bg-input border-input-border h-32 resize-none"
-                      required
-                    />
-                  </div>
-                  <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                    <Button type="submit" className="w-full gap-2 bg-gradient-primary hover:opacity-90">
-                      <Send size={18} />
-                      Send Message
-                    </Button>
-                  </motion.div>
-                </form>
-              </Card>
-            </RevealText>
-
-            <RevealText delay={0.6}>
               <div className="space-y-8">
                 <div>
                   <h3 className="text-2xl font-bold mb-6 text-foreground">Get in Touch</h3>
